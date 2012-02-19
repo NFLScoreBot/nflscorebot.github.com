@@ -5,6 +5,7 @@
 	<style>
 		p {
 			font-size:30px;
+			font-family: 'Yanone Kaffeesatz', sans-serif;
 		}
 
 		a {
@@ -22,60 +23,48 @@
 		#content {
 			padding:10px;
 			position:absolute;
-			top:40%;
+			top:30%;
 			height:10em;
+			width:50%;
 			margin-top:-5em;
 			vertical-align:middle;
 		}
 
-		#forkBanner {
+		#hero-div {
 			position:absolute;
 			top:0;
-			left:0;
-			border:0;
+			right:0;
+			width:100%;
 		}
 
-		#tweetCont {
-			font-size:20px;
-			color:#666666;
-			padding-top:10px;
-			border-left:2px solid #CCCCCC;
-			padding-left:5px;
-			width:70%;
+		#hero-img {
+			position:absolute;
+			top:0;
+			right:0;
+			width:30%;
+			padding-left:10%;
+			padding-right:10%;
+			padding-top:3%;
 		}
 	</style>
-	<script type="text/javascript">
-		var summary="";
-		function twitterResponse(data) {
-			for (var i in data.results) {
-				var tweet=data.results[i];
-				if (tweet["from_user"].toLowerCase()=="nflscorebot") {
-					summary=tweet["text"];
-					break;
-				}
-			}
-		}
-
-		window.onload=function () {
-			document.getElementById("tweetCont").innerHTML=summary;
-		}
-	</script>
-	<script type="text/javascript" src="https://search.twitter.com/search.json?q=nflscorebot&callback=twitterResponse">
-	</script>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body bgcolor="#e9e9e9">
 	<div id="root">
-		<a href="http://github.com/nflscorebot"><img id="forkBanner" src="https://a248.e.akamai.net/assets.github.com/img/edc6dae7a1079163caf7f17c60495bbb6d027c93/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>
 		<div align="center" id="content">
 			<p>
-				NFLScoreBot is a little bot, written in Node.js, that tweets short NFL game summaries.
+				Meet <a href="https://twitter.com/nflscorebot">@NFLScoreBot</a>.
 			</p>
 			<p>
-				Follow it <a href="http://twitter.com/nflscorebot">@NFLScoreBot</a>, or take a look at its last tweet:
+				It runs all the time, keeping up on the latest NFL football action. Why? So it can bring you little summaries of the games on Twitter.
 			</p>
-			<p id="tweetCont">
+			<p>
+				If you want to make it feel loved, <a href="https://twitter.com/nflscorebot">give it a follow</a> or <a href="https://github.com/nflscorebot">check out some of its code on Github</a>.
 			</p>
 		</div>
+	</div>
+	<div id="hero-div">
+		<img src="hero.png" id="hero-img">
 	</div>
 	<div align="center" style="position:absolute; bottom:0; left:0; width:100%;">
 		<p style="font-size:12px;">
